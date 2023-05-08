@@ -47,7 +47,7 @@
   background-color: $bubble-time-bg;
   transform: translate(0, -100%);
   opacity: 0;
-  transition: opacity linear .1s 1s;
+  transition: opacity linear 0.1s 1s;
 
   .qkb-msg-bubble--user & {
     display: block;
@@ -55,11 +55,11 @@
 }
 
 .qkb-msg-bubble-component {
-  font-size: .875rem;
+  font-size: 0.875rem;
 
   &:hover {
     & ~ .qkb-msg-bubble__time {
-      opacity: .8;
+      opacity: 0.8;
     }
   }
 }
@@ -70,7 +70,7 @@
   &.qkb-msg-bubble--bot {
     .qkb-msg-bubble-component {
       margin-right: 2.5rem;
-      margin-left: .5rem;
+      margin-left: 0.5rem;
     }
   }
 
@@ -85,7 +85,7 @@
 
 .qkb-msg-bubble-component__text {
   position: relative;
-  padding: .75rem 1rem;
+  padding: 0.75rem 1rem;
   border-radius: 6px;
 }
 
@@ -102,8 +102,8 @@
   display: block;
   overflow: hidden;
   position: relative;
-  margin: .5rem .375rem 0 0;
-  padding: .25rem 1rem;
+  margin: 0.5rem 0.375rem 0 0;
+  padding: 0.25rem 1rem;
   cursor: pointer;
   outline: 0;
   border: 1px solid transparent;
@@ -113,7 +113,7 @@
   font-family: inherit;
   text-decoration: none;
   background-color: transparent;
-  transition: background-color linear .15s, color linear .1s;
+  transition: background-color linear 0.15s, color linear 0.1s;
 
   span {
     position: relative;
@@ -121,12 +121,11 @@
   }
 }
 
-
 // Typing indicator
 .qkb-msg-bubble__typing-indicator {
   position: relative;
   min-width: $typing-indicator-size * 3 + 8px;
-  opacity: .3;
+  opacity: 0.3;
 
   span {
     display: block;
@@ -136,10 +135,9 @@
     border-radius: 50%;
   }
 
-
   &::before,
   &::after {
-    content: '';
+    content: "";
     display: block;
     position: absolute;
     top: 0;

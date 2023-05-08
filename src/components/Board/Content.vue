@@ -14,46 +14,46 @@
 </template>
 
 <script>
-import MessageBubble from '../MessageBubble/Main'
-import MessageTyping from '../MessageBubble/Typing'
+import MessageBubble from "../MessageBubble/Main";
+import MessageTyping from "../MessageBubble/Typing";
 
 export default {
   components: {
     MessageBubble,
-    MessageTyping
+    MessageTyping,
   },
 
   props: {
     mainData: {
       type: Array,
-      required: true
+      required: true,
     },
 
     botTyping: {
       type: Boolean,
-      default: false
-    }
+      default: false,
+    },
   },
 
-  mounted () {
-    this.updateScroll()
+  mounted() {
+    this.updateScroll();
   },
 
   watch: {
     mainData: function (newVal) {
       this.$nextTick(() => {
-        this.updateScroll()
-      })
-    }
+        this.updateScroll();
+      });
+    },
   },
 
   methods: {
-    updateScroll () {
-      const contentElm = this.$refs.boardContent
-      const offsetHeight = this.$refs.boardBubbles.offsetHeight
+    updateScroll() {
+      const contentElm = this.$refs.boardContent;
+      const offsetHeight = this.$refs.boardBubbles.offsetHeight;
 
-      contentElm.scrollTop = offsetHeight
-    }
-  }
-}
+      contentElm.scrollTop = offsetHeight;
+    },
+  },
+};
 </script>

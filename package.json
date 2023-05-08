@@ -32,13 +32,15 @@
     "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-unit-jest": "^4.0.0",
     "@vue/cli-service": "^4.0.0",
-    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/eslint-config-prettier": "^7.1.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "babel-eslint": "^10.0.3",
     "bootstrap": "^4.3.1",
     "core-js": "^3.3.2",
     "eslint": "^5.16.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^5.0.0",
+    "prettier": "2.8.8",
     "pug": "^2.0.4",
     "pug-plain-loader": "^1.0.0",
     "sass": "^1.19.0",
@@ -51,10 +53,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bonnak/vue-chat-bot.git"
+    "url": "git+https://github.com/eng-ahmad-sameer/vue-chat-bot.git"
   },
   "bugs": {
-    "url": "https://github.com/bonnak/vue-chat-bot/issues"
+    "url": "https://github.com/eng-ahmad-sameer/vue-chat-bot/issues"
   },
   "homepage": "https://github.com/bonnak/vue-chat-bot#readme",
   "license": "MIT",

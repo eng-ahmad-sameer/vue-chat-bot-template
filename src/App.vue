@@ -14,87 +14,88 @@
     @msg-send="msgSend",
   )
 </template>
+
 <script>
-import BotIcon from './assets/icons/bot.png'
-import { VueChatBot } from './vue-chat-bot'
-import { messageService } from './helpers/message'
+import BotIcon from "./assets/icons/bot.png";
+import { VueChatBot } from "./vue-chat-bot";
+import { messageService } from "./helpers/message";
 
 export default {
   components: {
     BotIcon,
-    VueChatBot
+    VueChatBot,
   },
 
-  data () {
+  data() {
     return {
       messageData: [],
       botTyping: false,
       inputDisable: false,
       botOptions: {
         botAvatarImg: BotIcon,
-        boardContentBg: '#f4f4f4',
-        msgBubbleBgBot: '#fff',
-        inputPlaceholder: 'Type here...',
-        inputDisableBg: '#fff',
-        inputDisablePlaceholder: 'Hit the buttons above to respond'
-      }
-    }
+        boardContentBg: "#f4f4f4",
+        msgBubbleBgBot: "#fff",
+        inputPlaceholder: "Type here...",
+        inputDisableBg: "#fff",
+        inputDisablePlaceholder: "Hit the buttons above to respond",
+      },
+    };
   },
 
   methods: {
-    botStart () {
+    botStart() {
       // Get token if you want to build a private bot
       // Request first message here
 
       // Fake typing for the first message
-      this.botTyping = true
+      this.botTyping = true;
       setTimeout(() => {
-        this.botTyping = false
+        this.botTyping = false;
         this.messageData.push({
-          agent: 'bot',
-          type: 'text',
-          text: 'Hello'
-        })
-      }, 1000)
+          agent: "bot",
+          type: "text",
+          text: "Hello",
+        });
+      }, 1000);
     },
 
-    msgSend (value) {
+    msgSend(value) {
       // Push the user's message to board
       this.messageData.push({
-        agent: 'user',
-        type: 'text',
-        text: value.text
-      })
+        agent: "user",
+        type: "text",
+        text: value.text,
+      });
 
-      this.getResponse()
+      this.getResponse();
     },
 
     // Submit the message from user to bot API, then get the response from Bot
-    getResponse () {
+    getResponse() {
       // Loading
-      this.botTyping = true
+      this.botTyping = true;
 
       // Post the message from user here
       // Then get the response as below
 
       // Create new message from fake data
-      messageService.createMessage()
-        .then((response) => {
-          const replyMessage = {
-            agent: 'bot',
-            ...response
-          }
+      messageService.createMessage().then((response) => {
+        const replyMessage = {
+          agent: "bot",
+          ...response,
+        };
 
-          this.inputDisable = response.disableInput
-          this.messageData.push(replyMessage)
+        this.inputDisable = response.disableInput;
+        this.messageData.push(replyMessage);
 
-          // finish
-          this.botTyping = false
-        })
-    }
-  }
-}
+        // finish
+        this.botTyping = false;
+      });
+    },
+  },
+};
 </script>
+
 <style lang="scss">
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;

@@ -21,26 +21,26 @@
         span {{ item.text }}
 </template>
 <script>
-import EventBus from '../../helpers/event-bus'
+import EventBus from "../../helpers/event-bus";
 
 export default {
   props: {
     mainData: {
-      type: Object
-    }
+      type: Object,
+    },
   },
 
-  data () {
+  data() {
     return {
-      selectedItem: null
-    }
+      selectedItem: null,
+    };
   },
 
   methods: {
-    selectOption (value) {
-      this.selectedItem = value
-      EventBus.$emit('select-button-option', value)
-    }
-  }
-}
+    selectOption(value) {
+      this.selectedItem = value;
+      EventBus.$emit("select-button-option", value);
+    },
+  },
+};
 </script>

@@ -7,8 +7,8 @@
 export default {
   props: {
     mainData: {
-      type: Object
-    }
-  }
-}
+      type: Object,
+    },
+  },
+};
 </script>
