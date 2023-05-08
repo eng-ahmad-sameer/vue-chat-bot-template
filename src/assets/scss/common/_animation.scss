@@ -49,7 +49,7 @@ $typing-duration: 0.35s;
   }
 
   span {
-    animation-delay: $typing-duration / 2;
+    animation-delay: calc($typing-duration / 2);
   }
 
   &::after {
