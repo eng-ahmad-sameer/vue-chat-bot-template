@@ -22,14 +22,16 @@
           v-if="item.action === 'postback'"
           @click="selectOption(item)"
         >
-          <span>{{ item.text }}</span></button
-        ><a
+          <span>{{ item.text }}</span>
+        </button>
+        <a
           class="qkb-mb-button-options__btn qkb-mb-button-options__url"
           target="_blank"
           v-else
           :href="item.value"
-          ><span>{{ item.text }}</span></a
         >
+          <span>{{ item.text }}</span>
+        </a>
       </div>
     </div>
   </div>
@@ -43,13 +45,11 @@ export default {
       type: Object,
     },
   },
-
   data() {
     return {
       selectedItem: null,
     };
   },
-
   methods: {
     selectOption(value) {
       this.selectedItem = value;

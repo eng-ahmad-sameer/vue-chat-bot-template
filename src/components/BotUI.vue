@@ -1,8 +1,22 @@
 <template>
   <div class="qkb-bot-ui" :class="uiClasses">
     <transition name="qkb-fadeUp">
-      <div class="qkb-board" v-if="botActive">
-        <BoardHeader :bot-title="optionsMain.botTitle" @close-bot="botToggle">
+      <div
+        class="qkb-board"
+        :class="
+          fullScreenMode
+            ? 'qkb-board-full-screen apply-transition'
+            : 'apply-transition'
+        "
+        ref="board"
+        v-if="botActive"
+      >
+        <BoardHeader
+          :bot-title="optionsMain.botTitle"
+          :full-screen-applied="fullScreenMode"
+          @close-bot="botToggle"
+          @apply-full-screen-mode="applyFullScreenMode"
+        >
           <template v-slot:header>
             <slot name="header"></slot>
           </template>
@@ -95,6 +109,7 @@ export default {
   data() {
     return {
       botActive: false,
+      fullScreenMode: false,
       defaultOptions: {
         botTitle: "Chatbot",
         colorScheme: "#1b53d0",
@@ -158,6 +173,9 @@ export default {
 
       if (this.botActive) {
         this.$emit("open");
+        setTimeout(() => {
+          this.$refs.board.classList.remove("apply-transition");
+        }, 500);
       } else {
         // EventBus.$off('select-button-option')
         this.$emit("destroy");
@@ -167,7 +185,12 @@ export default {
     sendMessage(value) {
       this.$emit("msg-send", value);
     },
-
+    applyFullScreenMode(value) {
+      this.fullScreenMode = value;
+      setTimeout(() => {
+        this.$refs.board.classList.remove("apply-transition");
+      }, 500);
+    },
     selectOption(value) {
       this.$emit("msg-send", value);
     },

@@ -42,7 +42,7 @@ export default {
   },
 
   watch: {
-    mainData: function (newVal) {
+    mainData: function () {
       this.$nextTick(() => {
         this.updateScroll();
       });

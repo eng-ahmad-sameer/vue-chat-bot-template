@@ -44,6 +44,9 @@ export default {
 .qkb-board-header__title {
   color: ${textColor};
 }
+.qkb-board-header__full-screen-icon {
+  color: ${textColor}
+}
 .qkb-board-content {
   background-color: ${boardContentBg};
 }

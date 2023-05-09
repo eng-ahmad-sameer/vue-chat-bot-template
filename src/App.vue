@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <img alt="Vue Bot UI" src="./assets/logo.png" />
-
     <VueChatBot
       :options="botOptions"
       :messages="messageData"
