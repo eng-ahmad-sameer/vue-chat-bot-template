@@ -1,7 +1,7 @@
 import VueChatBot from "./components/BotUI.vue";
 
 const Plugin = {
-  install(Vue, options) {
+  install(Vue) {
     Vue.component("VueChatBot", VueChatBot);
 
     if (typeof window !== "undefined" && window.Vue) {
