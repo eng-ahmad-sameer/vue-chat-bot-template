@@ -29,7 +29,6 @@
   "devDependencies": {
     "@commitlint/cli": "^7.6.1",
     "@commitlint/config-conventional": "^7.6.0",
-    "@fortawesome/fontawesome-free": "^6.4.0",
     "@types/jest": "^24.0.11",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",

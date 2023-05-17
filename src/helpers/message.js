@@ -5,7 +5,7 @@ export const messageService = {
 };
 
 function createMessage() {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       let randomNumber = Math.floor(Math.random() * fakeMessages.length);
       resolve(fakeMessages[randomNumber]);

@@ -12,11 +12,14 @@
   box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 0.15);
 
   @media screen and (max-width: 600px) {
-    width: 100%;
+    width: 95%;
   }
 }
 .qkb-board-full-screen {
   width: $board-full-screen-width;
+  @media screen and (max-width: 600px) {
+    width: 95%;
+  }
 }
 .apply-transition {
   transition: all 0.5s linear;

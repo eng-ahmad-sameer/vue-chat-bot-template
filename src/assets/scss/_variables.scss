@@ -11,7 +11,7 @@ $bubble-btn-color: $white;
 $board-bg: $white;
 $board-radius: 8px;
 $board-width: 376px;
-$board-full-screen-width: 96vw;
+$board-full-screen-width: calc(100vw - 3.5rem);
 
 // Header
 $header-height: 50px;
@@ -24,7 +24,7 @@ $bubble-time-color: $white;
 $typing-indicator-size: 7px;
 
 // Action
-$action-height: 46px;
+$action-height: fit-content;
 $action-line: #e6e6e6;
 $action-input-bg: $white;
 $action-disable-bg: #ccc;

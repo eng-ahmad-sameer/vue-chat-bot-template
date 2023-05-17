@@ -45,7 +45,7 @@ export default {
   color: ${textColor};
 }
 .qkb-board-header__full-screen-icon {
-  color: ${textColor}
+  fill: ${textColor}
 }
 .qkb-board-content {
   background-color: ${boardContentBg};

@@ -2,15 +2,16 @@
   <div class="qkb-board-action" :class="actionClass">
     <div class="qkb-board-action__wrapper">
       <div class="qkb-board-action__msg-box">
-        <input
+        <textarea
           class="qkb-board-action__input"
-          type="text"
+          tabindex="0"
           v-model="messageText"
           ref="qkbMessageInput"
           :disabled="inputDisable"
           :placeholder="inputPlaceholder"
-          @keydown.enter="sendMessage"
-        />
+          @keydown.enter.exact.prevent="sendMessage"
+          v-autosize
+        ></textarea>
         <div
           class="qkb-board-action__disable-text"
           v-if="inputDisablePlaceholder && inputDisable"

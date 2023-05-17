@@ -30,7 +30,6 @@ export default {
       type: Array,
       required: true,
     },
-
     botTyping: {
       type: Boolean,
       default: false,

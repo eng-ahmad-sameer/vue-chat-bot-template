@@ -5,8 +5,12 @@
         class="qkb-board"
         :class="
           fullScreenMode
-            ? 'qkb-board-full-screen apply-transition'
-            : 'apply-transition'
+            ? `qkb-board-full-screen ${
+                optionsMain.animation ? 'apply-transition' : ''
+              }`
+            : optionsMain.animation
+            ? 'apply-transition'
+            : ''
         "
         ref="board"
         v-if="botActive"
@@ -173,11 +177,12 @@ export default {
 
       if (this.botActive) {
         this.$emit("open");
-        setTimeout(() => {
-          this.$refs.board.classList.remove("apply-transition");
-        }, 500);
+        if (this.$refs.board) {
+          setTimeout(() => {
+            this.$refs.board.classList.remove("apply-transition");
+          }, 500);
+        }
       } else {
-        // EventBus.$off('select-button-option')
         this.$emit("destroy");
       }
     },
@@ -187,9 +192,11 @@ export default {
     },
     applyFullScreenMode(value) {
       this.fullScreenMode = value;
-      setTimeout(() => {
-        this.$refs.board.classList.remove("apply-transition");
-      }, 500);
+      if (this.$refs.board) {
+        setTimeout(() => {
+          this.$refs.board.classList.remove("apply-transition");
+        }, 500);
+      }
     },
     selectOption(value) {
       this.$emit("msg-send", value);

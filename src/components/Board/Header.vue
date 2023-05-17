@@ -7,17 +7,23 @@
         @click="applyFullScreenMode"
       >
         <span v-show="fullScreenApplied">
-          <i class="fa-solid fa-minimize"></i>
+          <Minimize />
         </span>
         <span v-show="!fullScreenApplied">
-          <i class="fa-solid fa-maximize"></i>
+          <Maximize />
         </span>
       </div>
     </slot>
   </div>
 </template>
 <script>
+import Maximize from "../../assets/icons/maximize.svg";
+import Minimize from "../../assets/icons/minimize.svg";
 export default {
+  components: {
+    Maximize,
+    Minimize,
+  },
   data() {
     return {
       isFullScreen: false,
