@@ -63,6 +63,9 @@
     }
   }
 }
+.qkb-msg-bubble-component--single-text {
+  margin-bottom: 1.3rem;
+}
 
 .qkb-msg-bubble {
   padding-bottom: 1rem;
@@ -87,11 +90,41 @@
   position: relative;
   padding: 0.75rem 1rem;
   border-radius: 6px;
+  a {
+    color: white;
+    text-decoration: underline;
+  }
 }
-
+.qkb-msg-bubble-component_copy-button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+.qkb-msg-bubble-component_copy-button {
+  overflow: hidden;
+  position: absolute;
+  margin: 0.3rem 0 0 0;
+  padding: 0.15rem 0.4rem;
+  cursor: pointer;
+  outline: 0;
+  border: 1px solid transparent;
+  border-radius: 13px;
+  color: inherit;
+  font-size: 0.7rem;
+  font-family: inherit;
+  text-decoration: none;
+  background-color: transparent;
+  transition: background-color linear 0.15s, color linear 0.1s;
+}
 .qkb-msg-bubble-component__options-wrapper {
   display: flex;
   flex-wrap: wrap;
+}
+.qkb-msg-bubble.qkb-msg-bubble--user {
+  .qkb-msg-bubble-component_copy-button-wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
 
 .qkb-mb-button-options__item {

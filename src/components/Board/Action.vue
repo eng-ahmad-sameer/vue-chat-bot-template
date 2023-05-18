@@ -10,7 +10,7 @@
           :disabled="inputDisable"
           :placeholder="inputPlaceholder"
           @keydown.enter.exact.prevent="sendMessage"
-          v-autosize
+          v-textarea-autosize
         ></textarea>
         <div
           class="qkb-board-action__disable-text"
@@ -35,12 +35,15 @@
 </template>
 <script>
 import IconSend from "../../assets/icons/send.svg";
+import { TextareaAutosize } from "../../helpers/text-area-auto-size";
 
 export default {
   components: {
     IconSend,
   },
-
+  directives: {
+    TextareaAutosize,
+  },
   props: {
     inputPlaceholder: {
       type: String,

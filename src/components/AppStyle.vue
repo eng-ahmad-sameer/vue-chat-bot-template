@@ -70,6 +70,14 @@ ${
 .qkb-msg-bubble__typing-indicator::after {
   background-color: ${msgBubbleColorBot};
 }
+.qkb-msg-bubble-component_copy-button {
+  color: ${msgBubbleBgUser};
+  border-color: ${msgBubbleBgUser};
+}
+.qkb-msg-bubble-component_copy-button:hover {
+  color: ${msgBubbleColorUser};
+  background-color: ${msgBubbleBgUser};
+}
 .qkb-mb-button-options__btn::before {
   background-color: ${msgBubbleBgUser};
 }
