@@ -1,6 +1,7 @@
 .qkb-board-content {
+  position: relative;
   flex-grow: 1;
-  overflow: hidden scroll;
+  overflow: hidden auto;
 }
 
 .qkb-board-content__bubbles {
@@ -64,7 +65,10 @@
   }
 }
 .qkb-msg-bubble-component--single-text {
-  margin-bottom: 1.3rem;
+  overflow: hidden;
+}
+.qkb-msg-bubble-component__text-type {
+  white-space: pre-line;
 }
 
 .qkb-msg-bubble {
@@ -72,7 +76,7 @@
 
   &.qkb-msg-bubble--bot {
     .qkb-msg-bubble-component {
-      margin-right: 2.5rem;
+      margin-right: 1.1rem;
       margin-left: 0.5rem;
     }
   }
@@ -98,11 +102,9 @@
 .qkb-msg-bubble-component_copy-button-wrapper {
   display: flex;
   justify-content: flex-end;
-  position: relative;
 }
 .qkb-msg-bubble-component_copy-button {
   overflow: hidden;
-  position: absolute;
   margin: 0.3rem 0 0 0;
   padding: 0.15rem 0.4rem;
   cursor: pointer;

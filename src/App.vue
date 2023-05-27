@@ -4,12 +4,18 @@
     <VueChatBot
       :options="botOptions"
       :messages="messageData"
-      :bot-typing="botTyping"
+      :bot-typing="true"
+      :show-copy-button="showCopyButton"
+      :allow-fullscreen-mode="allowFullscreenMode"
       :input-disable="inputDisable"
       :is-open="false"
       @init="botStart"
       @msg-send="msgSend"
-    ></VueChatBot>
+    >
+      <template v-slot:extraContent>
+        <div class="ahmad">Ahmad</div>
+      </template>
+    </VueChatBot>
   </div>
 </template>
 
@@ -28,6 +34,8 @@ export default {
       messageData: [],
       botTyping: false,
       inputDisable: false,
+      showCopyButton: true,
+      allowFullscreenMode: true,
       botOptions: {
         botAvatarImg: BotIcon,
         boardContentBg: "#f4f4f4",
@@ -101,5 +109,9 @@ export default {
   // text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.ahmad {
+  position: fixed;
+  left: 0;
 }
 </style>

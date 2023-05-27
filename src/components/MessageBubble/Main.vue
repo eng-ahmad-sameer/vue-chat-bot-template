@@ -8,6 +8,7 @@
       v-if="componentType"
       :is="componentType"
       :main-data="message"
+      :show-copy-button="showCopyButton"
     ></component>
 
     <div class="qkb-msg-bubble__time" v-if="message.createdAt">
@@ -29,6 +30,10 @@ export default {
   props: {
     message: {
       type: Object,
+    },
+    showCopyButton: {
+      type: Boolean,
+      default: true,
     },
   },
 

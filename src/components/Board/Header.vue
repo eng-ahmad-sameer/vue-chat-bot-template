@@ -2,9 +2,11 @@
   <div class="qkb-board-header">
     <slot name="header">
       <div class="qkb-board-header__title">{{ botTitle }}</div>
+      <slot name="headerExtraActions"></slot>
       <div
         class="qkb-board-header__full-screen-icon"
         @click="applyFullScreenMode"
+        v-if="allowFullscreenMode"
       >
         <span v-show="fullScreenApplied">
           <Minimize />
@@ -37,6 +39,10 @@ export default {
     fullScreenApplied: {
       type: Boolean,
       default: false,
+    },
+    allowFullscreenMode: {
+      type: Boolean,
+      default: true,
     },
   },
   methods: {

@@ -5,6 +5,7 @@
         v-for="(item, index) in mainData"
         :key="index"
         :message="item"
+        :show-copy-button="showCopyButton"
       ></message-bubble>
       <div class="qkb-board-content__bot-typing" v-if="botTyping">
         <slot name="botTyping">
@@ -12,6 +13,7 @@
         </slot>
       </div>
     </div>
+    <slot name="extraContent"></slot>
   </div>
 </template>
 
@@ -33,6 +35,10 @@ export default {
     botTyping: {
       type: Boolean,
       default: false,
+    },
+    showCopyButton: {
+      type: Boolean,
+      default: true,
     },
   },
 

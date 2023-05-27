@@ -20,15 +20,27 @@
           :full-screen-applied="fullScreenMode"
           @close-bot="botToggle"
           @apply-full-screen-mode="applyFullScreenMode"
+          :allow-fullscreen-mode="allowFullscreenMode"
         >
           <template v-slot:header>
             <slot name="header"></slot>
           </template>
+          <template v-slot:headerExtraActions>
+            <slot name="headerExtraActions"></slot>
+          </template>
         </BoardHeader>
         <BoardContent
           :bot-typing="botTyping"
+          :show-copy-button="showCopyButton"
           :main-data="messages"
-        ></BoardContent>
+        >
+          <template v-slot:botTyping>
+            <slot name="botTyping"></slot>
+          </template>
+          <template v-slot:extraContent>
+            <slot name="extraContent"></slot>
+          </template>
+        </BoardContent>
         <BoardAction
           :input-disable="inputDisable"
           :input-placeholder="optionsMain.inputPlaceholder"
@@ -107,6 +119,14 @@ export default {
     isOpen: {
       type: Boolean,
       default: false,
+    },
+    showCopyButton: {
+      type: Boolean,
+      default: true,
+    },
+    allowFullscreenMode: {
+      type: Boolean,
+      default: true,
     },
   },
 
